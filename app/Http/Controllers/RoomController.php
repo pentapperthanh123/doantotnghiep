@@ -54,7 +54,7 @@ class RoomController extends Controller
     public function store(RoomRequest $request)
     {
         Room::create($request->all());
-        return redirect('rooms');
+        return redirect('rooms')->with('add','Thêm mới phòng thành công!');
         
     }
 

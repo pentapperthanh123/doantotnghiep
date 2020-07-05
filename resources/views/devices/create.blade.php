@@ -27,7 +27,7 @@
 				</select>
 
 				<label>{{ trans('devices/create.type_device') }}:</label>				
-				<select id="typedevices_id"  name="typydevices_id" class="form-control">
+				<select id="typedevices_id"  name="type_devices_id" class="form-control">
 					@foreach($typedeviceList as $tydevices)
 						<option value="{{ $tydevices->id }}">{{ $tydevices->name }}</option>
 					@endforeach
@@ -66,8 +66,10 @@
 	</div>	
 	<script type="text/javascript">
 		var jsonComputerList = '<?php echo json_encode($computerList); ?>';
-		var computerList = JSON.parse(jsonComputerList);		
+		var computerList = JSON.parse(jsonComputerList);
 
+		var jsonTypeDeviceList = '<?php echo json_encode($typedeviceList); ?>';
+		var typedeviceList = JSON.parse(jsonTypeDeviceList);	
 		function setComputers(selectObj){
 			var idx = selectObj.selectedIndex; 
 			// get the value of the selected option 
@@ -86,6 +88,19 @@
 		}
 		function addTags(){
 			$('#tagsDom').append('<label class=tag name=tags[] value=' + $('#tags').val() + '>' + $('#tags option:selected').text() +'</label><br/>');
+		}
+		function setTypeDevices(selectObj){
+			var idx = selectObj.selectIndex;
+			var typeId = selectObj.option[idx].value;
+			selectList = document.getElementById("type_devices_id");
+			for(var i = 0, i < TypedeviceList.length; i++) {
+				if(typedeviceList[i].status==typeId){
+					var option = document.createElement("option");
+					option.value = typedeviceList[i].id;
+					option.text = typedeviceList[i].name;
+					selectList.appendChild(option);
+				}
+			}
 		}
 	</script>
 @endsection

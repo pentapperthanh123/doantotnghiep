@@ -58,7 +58,7 @@ class DeviceController extends Controller
     public function store(DeviceRequest $request)
     {
         Device::create($request->all());
-        return redirect('devices');
+        return redirect('devices')->with('add',"Thêm mới thành công!");
     }
 
     /**

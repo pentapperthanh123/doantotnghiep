@@ -14,6 +14,12 @@
 			</form>
 		</div>
 	</div>
+	@if(session('add'))
+    <div class="alert alert-success alert-dismissible notif-user">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{ session('add') }}
+    </div>
+    @endif
 	<div class="container-fluid text-center">
 		<table class="table h list-device">
 			<thead>
