@@ -7,12 +7,34 @@
     <div class="top-list-user">
         <button id="add-new-user" type="button" class="btn btn-primary"><a href="{{url('computers/create')}}">+</a></button>  
         <div class="search-user">
-            <form action="{{ url('computers') }}" method="GET">
+            <!-- <form action="{{ url('computers') }}" method="GET" class="filter-user">
+                <select id="select-box1" name="col" class="select-computer">
+                  @foreach ($computerList as $computer)
+                  <option value="{{$computer->id}}"></option>
+                  @endforeach
+                </select>
+                <button type="submit" class="btn btn-primary btn-filter"><i class="fa fa-filter"></i></button>
+            </form> -->
+            <form action="{{url('computers')}}" method="GET" class="fileter-user">
+                <select id="select-box1" name="col" class="select-computer">
+                    <?php $rooms = DB::table('rooms')->get() ?>
+                     @foreach($rooms as $room)
+                         <option value="{{$room->id}}">{{$room->name}}
+                        
+                    </option>
+                    
+                    @endforeach
+                </select>
+                 <button type="submit" class="btn btn-primary" >Tìm kiếm</button>
+                    
+            </form>
+            <form action="{{ url('computers') }}" method="GET" class="form-search-user">
                 <input type="hidden" name="action" value="search">
                 <input type="text" name="key" id="input" class="form-control" value="" placeholder="Search Computer ...">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
+        
     </div>
     <div class="container-fluid text-center">
         <div class="row">
@@ -69,6 +91,11 @@
 
                                         <button type="submit" data-toggle="tooltip" title="Delete" data-placement="top" onclick="return confirm('bạn có thực sự muốn xóa ?'); ">{{ trans('computer/index.delete')}}</button>
                                     </form>
+                                </div>
+                                <div class="col-lg-12 bgr room">
+                                    <p>
+                                        <b>{{$computer->desc}}</b>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -142,5 +169,34 @@
                 }
             });
         }
+        
     </script>
+    <!-- <script>
+        $("select-computer").on("click" , function() {
+          
+          $(this).parent(".select-box").toggleClass("open");
+          
+        });
+    
+        $(document).mouseup(function (e)
+        {
+            var container = $(".select-box");
+    
+            if (container.has(e.target).length === 0)
+            {
+                container.removeClass("open");
+            }
+        });
+    
+    
+        $("select-computer").on("change" , function() {
+          
+          var selection = $(this).find("option:selected").text(),
+              labelFor = $(this).attr("id"),
+              label = $("[for='" + labelFor + "']");
+            
+          label.find(".label-desc").html(selection);
+            
+        });
+    </script> -->
 @endsection
