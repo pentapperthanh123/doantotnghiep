@@ -27,8 +27,7 @@ class ComputerController extends Controller
         }else{
             $itemperPage = 12;
             $computerList = DB::table('computers')->orderBy('id','ASC')->paginate($itemperPage);
-        }   
-        
+        } 
         return view('computers.index',['computerList' => $computerList]);
     }
 
@@ -133,5 +132,11 @@ class ComputerController extends Controller
 
     public function getCreateDevice(){
         
+    }
+
+    public function searchRoom($id){
+        $computer_rooms = Room::where('rooms_id',$id)->get();
+        $id_ =  $id;
+        return view('computer.index',compact('computer_rooms',$id_));
     }
 }

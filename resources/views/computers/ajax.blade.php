@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<meta name="csrf-token" content="{{ csrf_token() }} ">
@@ -26,19 +26,19 @@
 	    });
 	    function append_json(data){
             var table = document.getElementById('gable'); 
-            data.forEach(function(user) {
+            data.forEach(function(computer) {
                 var tr = document.createElement('tr');
-                tr.innerHTML = '<td>' + user.name + '</td>' +
-                '<td>' + user.email + '</td>' +
-                '<td>' + user.username + '</td>' +
-                '<td>' + user.role + '</td>';
+                tr.innerHTML = '<td>' + computer.name + '</td>' +
+                '<td>' + computer.desc + '</td>' +
+                '<td>' + computer.status + '</td>' +
+                '<td>' + computer.rooms_id +'</id>' +
                 table.appendChild(tr);
             });
         }
 	});
 </script>
 <input type="text" name="name" id="name">
-<button id="search-user">Button</button>
+<button id="search-computer">Button</button>
 <div id="content">
 	<table id="gable">
         <colgroup>
@@ -53,4 +53,4 @@
     </table>
 </div>
 </body>
-</html>
+</html> -->

@@ -84,7 +84,8 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	Route::put('rooms/{id}', 'RoomController@update');
 	Route::get('rooms/{id}', 'RoomController@show');
 	Route::delete('rooms/{id}','RoomController@destroy')->middleware('can:user.delete');
-	Route::get('rooms/search/{key}', 'RoomController@search'); 
+	Route::get('rooms/search/{key}', 'RoomController@search');
+	Route::get('rooms/{id}','RoomController@searchRoom');
 	/*
 	|--------------------------------------------------------------------------
 	| Routes Device

@@ -15,6 +15,6 @@ class Computer extends Model
     }
 
     public function room(){
-    	return $this->belongsTo('App\Models\Room', 'rooms_id', 'id');
+    	return $this->belongsTo('App\Models\Room', 'rooms_id','id');
     }
 }
