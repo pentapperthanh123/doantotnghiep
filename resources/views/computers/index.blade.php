@@ -52,7 +52,11 @@
                                 </div>
                             </div>
                             {{-- image --}}
+                            @if($computer->status==0)
                             <img id="click-show-device" data-toggle="modal" href='#modal-id' src="{{ asset('assets/img/desktop.jpg') }}" style="width: 100%; cursor: pointer;" alt="placeholder+image"  onclick="clickOnComputer({{ $computer->id }})">
+                            @else
+                            <img id="click-show-device" data-toggle="modal" href='#modal-id' src="{{ asset('assets/img/desktop404.jpg') }}" style="width: 100%; cursor: pointer;" alt="placeholder+image"  onclick="clickOnComputer({{ $computer->id }})">
+                            @endif
                             {{-- button --}}
                             <div class="text-center"><b>{{ $computer->name }}</b></div>
                             <div class="row btn-computer">
