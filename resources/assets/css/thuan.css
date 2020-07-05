@@ -1,0 +1,28 @@
+button#addBtn {
+  width: 45px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 23px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #000;
+  background-color: #263544;
+  border: none;
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;
+  color: white;
+}
+
+button#addBtn:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: white;
+    transform: rotate(45deg);
+    transform: translateY(-7px);
+    border-radius: 45px;
+    width: 45px;
+    height: 45px;
+}

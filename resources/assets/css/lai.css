@@ -1,0 +1,112 @@
+.has-errorroom{
+  border-color: red;
+}
+.alertroom{
+  color: red;
+}
+button#add-new-computer {
+  width: 180px; 
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #ff98b7;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;
+  margin-left: 0px;
+}
+button#add-new-computer:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+table.list-computer tbody tr.old{
+    background: #f7dae3;
+}
+
+table.list-computer tbody tr.even{
+    background: #ffefef;
+}
+table.list-computer thead tr {
+    height: 50px;
+    background: #fb89ac;
+    color: blue;
+}
+.pagination-computer{
+  text-align: center;
+}
+.bottom-grid:hover .col-lg-12.bgr.room {
+    opacity: 1;
+}
+.col-lg-12.bgr.room {
+  width: 308px;
+  height: 201px;
+  background: #4f5b67a1;
+  position: absolute;
+  top: 58px;
+  left: 27px;
+  opacity: 0;
+  color: white;
+}
+
+.img-middle {
+    position: relative;
+    margin:5px;
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #c1c1c1;
+    border-radius: 5px;
+    box-shadow: 5px 8px #c1bdbd;
+}
+
+.img-middle.room {
+    margin: 26px;
+    color: dimgray;
+    box-shadow: 5px 8px #9e9e9e;
+}
+#room-ion {
+    font-size: x-large;
+}
+.room {
+    font-weight: 400;
+}
+#create-rooms {
+  width: 90px!important;
+  height: 40px!important;
+  font-size: 16px!important;
+  font-weight: 500;
+  color: #e0e0e0;
+  background-color: #263544;
+  border: none;
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+}
+.form-rooms.container-fluid {
+  margin: 0px 0px 0px 2px;
+}
+.form-control.room {
+    margin-bottom: 15px;
+}
+button.button-edit-room.pull-left {
+    background: transparent;
+    border: 0px;
+    margin: 0px 23px;
+}
+button.button-delete-room.pull-right {
+    color: red;
+    background: transparent;
+    border: 0px;
+    margin: 0px 23px;
+}

@@ -1,0 +1,193 @@
+.modal-right>ul>li:last-child {
+    border: none;
+}
+.modal-right span {
+    font-weight: 500;
+}
+.modal-right>ul>li {
+    padding: 26px 0px;
+    border-bottom: 1px solid #d2d2d2;
+}
+.modal-right ul {
+    list-style: none;
+    text-align: left;
+    padding: 0px 30px;
+}
+.modal-body .modal-right {
+  width: 50%;
+  float: right;
+}
+.modal-left img {
+    width: 100%;
+}
+.modal-body .modal-left {
+    float: left;
+    width: 50%;
+}
+.modal-body {
+    padding: 1px;
+    height: 466px;
+}
+.modal-content{
+  z-index: 9999!important;
+}
+.modal-backdrop{
+  position: relative!important;
+}
+form#form-add-device .modal-footer {
+    border: none;
+    display: inline-block;
+    margin-left: 372px;
+}
+form#form-add-device label.fail-validated,form#form-add-device label.fail-validated-1 {
+    display: block;
+    color: #e21d1d;
+    font-weight: bold;
+}
+.append-device h6 {
+    border-bottom: 1px solid #c3c3c3;
+    padding-bottom: 7px;
+}
+.append-right button {
+    display: block;
+    width: 90px;
+    margin: 7px 4px;
+}
+.append-device .append-right {
+    float: right;
+    display: block;
+    margin: 25px;
+}
+.append-left span {
+    display: flow-root;
+    width: 274px;
+    padding: 3px 0px;
+    font-weight: bold;
+}
+.append-left input {
+    float: right;
+    border: none;
+    background: none;
+    font-weight: 500;
+}
+.append-device .append-left {
+    float: left;
+    display: inline-block;
+}
+.append-device {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    height: 210px;
+    background: #c0d5ea;
+}
+.has-error{
+	border-color: red;
+}
+.alertcpt{
+	color: red;
+}
+.add-dev-for-com .modal-body {
+    height: auto!important;
+}
+button#add-new-computer {
+  width: 180px; 
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #ff98b7;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;
+  margin-left: 0px;
+}
+button#add-new-computer:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+table.list-computer tbody tr.old{
+    background: #f7dae3;
+}
+table.list-computer tbody tr.even{
+    background: #ffefef;
+}
+table.list-computer thead tr {
+    height: 50px;
+    background: #fb89ac;
+    color: blue;
+}
+.pagination-computer{
+	text-align: center;
+}
+.img-middle-computer {
+    position: relative;
+    margin:5px;
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #c1c1c1;
+    border-radius: 5px;
+    box-shadow: 5px 5px #c1bdbd;
+}
+div.button-option-edit-computer button {
+  width: 72px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  color: #000;
+  background-color: #c3d6e8;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+  margin-left: 60px;
+}
+div.button-option-edit-computer button>a {
+    padding: 9px 21px;
+}
+div.button-option-edit-computer button:hover a{
+  color: #fff;
+}
+div.button-option-edit-computer button:hover{
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+div.button-option-delete-computer button {
+  width: 72px;
+  height: 31px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #FD0202;
+  background-color: #c3d6e8;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 0px;
+  margin-right: 70px;
+}
+div.button-option-delete-computer button:hover{
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}

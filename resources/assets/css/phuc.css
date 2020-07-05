@@ -1,0 +1,88 @@
+table.list-device>thead>tr th {
+    color: white;
+}
+
+table.list-device thead tr {
+    background: #50677d;
+    height: 50px;
+}
+table.list-device tbody tr:hover {
+    color: white;
+    background: #7d8c9a!important;
+    transition: all 0.4s;
+}
+.container-fluid.vip {
+    width: 700px;
+}
+button#add-new-device {
+  width: 45px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 23px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #000;
+  background-color: #263544;
+  border: none;
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px;
+  color: white;
+}
+button#add-new-device:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: white;
+  transform: translateY(-7px);
+}
+
+.has-error{
+	border-color: red;
+}
+.alertdevice{
+	color: red;
+}
+
+.table > thead > tr > th {
+  text-align: center;
+  color: #423434;
+  font-weight: 600;
+}
+.table.boder thead tr {
+  background-color: #50677d;
+}
+tbody tr.old {
+  background-color: #cccccc;
+}
+tbody tr.even {
+  background-color: #e8e8e8;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  padding: 1px 8px;
+}
+button.edt:hover {
+  background: #f1f1f1;
+}
+table.table.boder {
+  border-collapse: inherit;
+}
+button.del:hover {
+    background-color: #f1f1f1;
+}
+.table.boder > thead > tr > th {
+  color: white; 
+  width: 30px;
+}
+.pagination-l {
+    float: left;
+    margin-left: 20%;
+}
+.from-group.lb label {
+    font-weight: 400;
+    margin-top: 15px;
+}
+button#btn-form-user.btn.btn-default.cre {
+    margin-top: 30px;
+}
