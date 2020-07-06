@@ -2,34 +2,47 @@
 
 @section('title', 'Computers')
 @section('title-bar', trans('computer/index.title'))
-
 @section('body')
-    <div class="top-list-user">
-        <button id="add-new-user" type="button" class="btn btn-primary"><a href="{{ url('users/create') }}">+</a></button>
-        {{-- <div class="filter-user"> --}}
+<div class="top-list-user">
+        <button id="add-new-user" type="button" class="btn btn-primary"><a href="{{url('computers/create')}}">+</a></button>  
         <div class="search-user">
-            <div class="btn-group"> 
-              <button class="btn btn-secondary dropdown-toggle" style="height: 50px;width: 150px; text-align: center; display: table-cell; height: 60px; padding-top: 10px" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chọn phòng
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <?php $rooms = DB::table('rooms')->get(); ?>
-                @foreach($rooms as $room)
-                <li><a href="{{url('computers/rooms/'.$room->id)}}">{{ucwords($room->name)}}</a></li>
-                 @endforeach
-              </ul>
-        </div>  
-
+            <!-- <form action="{{ url('computers') }}" method="GET" class="filter-user">
+                <select id="select-box1" name="col" class="select-computer">
+                  @foreach ($computerList as $computer)
+                  <option value="{{$computer->id}}"></option>
+                  @endforeach
+                </select>
+                <button type="submit" class="btn btn-primary btn-filter"><i class="fa fa-filter"></i></button>
+            </form> -->
+            <form action="{{url('computers')}}" method="GET" class="fileter-user">
+                <select id="select-box1" name="room_id" class="select-computer" onchange="javascript:handleSelect(this)">
+                    <?php $rooms = DB::table('rooms')->get(); ?>
+                     <!-- @foreach($rooms as $room)
+                        <option value="{{$room->id}}">{{$room->name}}
+                        
+                        </option>
+                    
+                    @endforeach -->
+                    @foreach($rooms as $room)
+                        <option value="{{url('rooms',$room->id)}}">{{ucwords($room->name)}}</option>
+                    @endforeach
+                    <button type="submit" class="btn btn-primary" >Tìm kiếm</button>
+                </select>
+                 
+                    
+            </form>
             <form action="{{ url('computers') }}" method="GET" class="form-search-user">
                 <input type="hidden" name="action" value="search">
                 <input type="text" name="key" id="input" class="form-control" value="" placeholder="Search Computer ...">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
+        
     </div>
     <div class="container-fluid text-center">
         <div class="row">
             @php($i = 0)
-            @foreach($computerList as $computer)
+            @foreach($room_computers as $computer)
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                 <div class="wrap-item">
                     {{-- <div class="row top-grid">
@@ -106,9 +119,7 @@
                                             <li id="list_dev"><span>Thiết bị : </span>
 
                                                 <ul class="device_com">
-                                                    @foreach($computerList as $r)
-                                                    <li></li>
-                                                    @endforeach
+                                                    
                                                 </ul>
                                             </li>
                                         </ul>
@@ -131,61 +142,9 @@
 
     </div>
     <script type="text/javascript">
-        function clickOnComputer(id){
-            requestApi(id);
-        }
-        function requestApi(idComputer){
-            $.get('api/computers/' + idComputer , function(data){   
-                var computer = data.data;
-
-                $('#name_show').empty();
-                $('#status_show').empty();
-                $('#com_in_room').empty();
-                $('li#list_dev>ul.device_com').empty();
-
-                // console.log(computer);
-                if (computer.status == 0) { 
-                    var status = 'Đang hoạt động';
-                } else { 
-                    var status = 'Ngừng hoạt động'; 
-                }
-                $('#name_show').append('<span>Tên :  </span>' + computer.name);
-                $('#status_show').append('<span>Trạng thái :  </span>' + status);
-                $('#com_in_room').append('<span>Máy tính thuộc </span>' + computer.room.name);
-                for (var i = 0; i < computer.devices.length; i++) {
-                    $('li#list_dev>ul.device_com').append('<li>'+ computer.devices[i].name + '</li>');
-                }
-            });
-        }
-        
-        
-    </script>
-    <!-- <script>
-        $("select-computer").on("click" , function() {
-          
-          $(this).parent(".select-box").toggleClass("open");
-          
-        });
-    
-        $(document).mouseup(function (e)
-        {
-            var container = $(".select-box");
-    
-            if (container.has(e.target).length === 0)
-            {
-                container.removeClass("open");
-            }
-        });
-    
-    
-        $("select-computer").on("change" , function() {
-          
-          var selection = $(this).find("option:selected").text(),
-              labelFor = $(this).attr("id"),
-              label = $("[for='" + labelFor + "']");
-            
-          label.find(".label-desc").html(selection);
-            
-        });
-    </script> -->
+	function handleSelect(elm)
+	{
+	window.location = elm.value+".php";
+	}
+	</script>
 @endsection
