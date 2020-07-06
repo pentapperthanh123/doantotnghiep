@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{asset('css/phuc-style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin/phuc-style.css')}}">
         <!-- Styles -->
         <style>
             html, body {

@@ -135,8 +135,9 @@ class ComputerController extends Controller
     }
 
     public function searchRoom($id){
-        $computer_rooms = Room::where('rooms_id',$id)->get();
-        $id_ =  $id;
-        return view('computer.index',compact('computer_rooms',$id_));
+        $room_computers = Computer::where('rooms_id',$id)->get();
+        $id_ = $id;
+        $devices = Device::find($id);
+        return view('computers.room_list_com',compact('room_computers','id_','devices'));
     }
 }

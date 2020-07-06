@@ -22,4 +22,5 @@
     <link href="{{ asset('css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/template/custom.js') }}"></script>
+    <link rel="stylesheet" href="{{asset('admin/css/font.css')}}" type="text/css"/>
 </head>

@@ -6,6 +6,53 @@
 
     <div class="content">
         <div class="container-fluid">
+            <div class="market-updates">
+            <div class="col-md-3 market-update-gd">
+                <div class="market-update-block clr-block-2">
+                    <div class="col-md-4 market-update-right">
+                    </div>
+                     <div class="col-md-8 market-update-left">
+                     <h4>Máy tính</h4>
+                    <h3>100</h3>
+                  </div>
+                  <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <div class="market-update-block clr-block-1">
+                    <div class="col-md-4 market-update-right">
+                    </div>
+                    <div class="col-md-8 market-update-left">
+                    <h4>Thiết bị</h4>
+                        <h3>140</h3>
+                    </div>
+                  <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <div class="market-update-block clr-block-3">
+                    <div class="col-md-4 market-update-right">
+                    </div>
+                    <div class="col-md-8 market-update-left">
+                        <h4>Loại thiết bị</h4>
+                        <h3>145</h3>
+                    </div>
+                  <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-3 market-update-gd">
+                <div class="market-update-block clr-block-4">
+                    <div class="col-md-4 market-update-right">
+                    </div>
+                    <div class="col-md-8 market-update-left">
+                        <h4>Thiết bị hỏng</h4>
+                        <h3>40</h3>
+                    </div>
+                  <div class="clearfix"> </div>
+                </div>
+            </div>
+           <div class="clearfix"> </div>
+        </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
@@ -244,4 +291,5 @@
         </div>
     </footer>
     {{-- end footer --}}
+    <script src=""></script>
 @endsection

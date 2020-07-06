@@ -1,15 +1,14 @@
 @extends('master')
 
-@section('title', 'Computers')
+@section('title', 'Computers Search by Room')
 @section('title-bar', trans('computer/index.title'))
-
 @section('body')
-    <div class="top-list-user">
+<div class="top-list-user">
         <button id="add-new-user" type="button" class="btn btn-primary"><a href="{{ url('users/create') }}">+</a></button>
         {{-- <div class="filter-user"> --}}
         <div class="search-user">
             <div class="btn-group"> 
-              <button class="btn btn-secondary dropdown-toggle" style="height: 50px;width: 150px; text-align: center; display: table-cell; height: 60px; padding-top: 10px" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chọn phòng
+              <button class="btn btn-secondary dropdown-toggle" style=" padding-right:10px;width: 150px; text-align: center; display: table-cell; height: 60px; padding-top: 10px" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chọn phòng
               <span class="caret"></span></button>
               <ul class="dropdown-menu dropdown-menu-right">
                 <?php $rooms = DB::table('rooms')->get(); ?>
@@ -29,21 +28,21 @@
     <div class="container-fluid text-center">
         <div class="row">
             @php($i = 0)
-            @foreach($computerList as $computer)
+            @foreach($room_computers as $computer)
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                 <div class="wrap-item">
                     {{-- <div class="row top-grid">
                         <div class="col-lg-2">
                             <p>
                                 @php($i++)
-                                {{ ComputerHelper::increment($i, $computerList->perPage(), $computerList->currentPage())}}
+                                {{ ComputerHelper::increment($i, $room_computers->perPage(), $room_computers->currentPage())}}
                             </p>
                         </div>
                         <div class="col-lg-6">
                             <p>{{ $computer->name }}</p>
                         </div>
                         <div class="col-lg-4">
-                            <p>{{ ComputerHelper::getStatus( $computer->status )}}</p>
+                            <p>{{ ComputerHelper::getStatus( $room_computers->status )}}</p>
                         </div>
                     </div>
                     --}}
@@ -53,7 +52,7 @@
                                 {{-- <div class="col-md-3 col-lg-3">
                                     <p>ID:
                                         @php($i++)
-                                        {{ ComputerHelper::increment($i, $computerList->perPage(), $computerList->currentPage())}}
+                                        {{ ComputerHelper::increment($i, $room_computers->perPage(), $room_computers->currentPage())}}
                                     </p>
                                 </div>
                                 <div class="col-md-6 col-lg-6">
@@ -100,15 +99,15 @@
                                     </div>
                                     <div class="modal-right">
                                         <ul class="show_one_com">
-                                            <li id="name_show"></li>
-                                            <li id="status_show"></li>
-                                            <li id="com_in_room"></li>
+                                            <li id="name_show">Tên: {{$computer->name}}</li>
+                                            <li id="status_show">Trạng thái: {{ ComputerHelper::getStatus( $computer->room->status )}}</li>
+                                            <li id="com_in_room">Máy tính thuộc: {{$computer->room->name}} </li>
                                             <li id="list_dev"><span>Thiết bị : </span>
 
                                                 <ul class="device_com">
-                                                    @foreach($computerList as $r)
-                                                    <li></li>
-                                                    @endforeach
+                                                   
+                                                    <li>{{$computer->devices}}</li>
+                                                    
                                                 </ul>
                                             </li>
                                         </ul>
@@ -124,12 +123,11 @@
             </div>
             @endforeach
         </div>
-
         <div class="pagination-computer">
-            {{ $computerList->links() }}
-        </div>
-
+            
+        </div>    
     </div>
+
     <script type="text/javascript">
         function clickOnComputer(id){
             requestApi(id);
@@ -158,34 +156,5 @@
             });
         }
         
-        
     </script>
-    <!-- <script>
-        $("select-computer").on("click" , function() {
-          
-          $(this).parent(".select-box").toggleClass("open");
-          
-        });
-    
-        $(document).mouseup(function (e)
-        {
-            var container = $(".select-box");
-    
-            if (container.has(e.target).length === 0)
-            {
-                container.removeClass("open");
-            }
-        });
-    
-    
-        $("select-computer").on("change" , function() {
-          
-          var selection = $(this).find("option:selected").text(),
-              labelFor = $(this).attr("id"),
-              label = $("[for='" + labelFor + "']");
-            
-          label.find(".label-desc").html(selection);
-            
-        });
-    </script> -->
 @endsection

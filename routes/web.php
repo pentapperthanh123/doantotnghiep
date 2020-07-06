@@ -115,6 +115,7 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	Route::delete('computers/{id}','ComputerController@destroy')->middleware('can:user.delete');
 	Route::get('computers/search/{key}', 'ComputerController@search');
 	Route::get('computers/create_device','ComputerController@getCreateDevice');
+	Route::get('computers/rooms/{id}/','ComputerController@searchRoom');
 	/*
 	|--------------------------------------------------------------------------
 	| Routes Type Device
