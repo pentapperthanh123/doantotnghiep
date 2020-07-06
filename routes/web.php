@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/total','ChartController@total')->name('total');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

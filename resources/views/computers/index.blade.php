@@ -153,7 +153,13 @@
                 $('#status_show').append('<span>Trạng thái :  </span>' + status);
                 $('#com_in_room').append('<span>Máy tính thuộc </span>' + computer.room.name);
                 for (var i = 0; i < computer.devices.length; i++) {
-                    $('li#list_dev>ul.device_com').append('<li>'+ computer.devices[i].name + '</li>');
+                    if(computer.devices[i].status == 2){
+                        $('li#list_dev>ul.device_com').append('<li style="color: red;">'+ computer.devices[i].name + '</li>');
+                    }else{
+                        $('li#list_dev>ul.device_com').append('<li style="color: black;">'+ computer.devices[i].name + '</li>');
+                    }
+                    
+                    
                 }
             });
         }

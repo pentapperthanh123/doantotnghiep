@@ -23,7 +23,14 @@
                 <input type="text" name="key" id="input" class="form-control" value="" placeholder="Search Computer ...">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
+            <?php $room_name = DB::table('rooms')->select('name')->where('id',$id_)->get() ?>
+            <h4>Các máy tính có trong
+                @foreach($room_name as $room)
+                {{$room->name}}
+                @endforeach
+            </h4>
         </div>
+
     </div>
     <div class="container-fluid text-center">
         <div class="row">
@@ -158,3 +165,5 @@
         
     </script>
 @endsection
+
+<div ></div>
